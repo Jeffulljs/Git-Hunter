@@ -5,18 +5,23 @@ export class Search extends Component {
     text: ''
   };
 
-  onSubmit(e) {
+  onSubmit = e => {
     e.preventDefault();
-    console.log(this.state.text);
-  }
+    this.props.searchUsers(this.state.text);
+    this.setState({
+      text: ''
+    });
+  };
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmit.bind(this)} className="tab">
+        <form onSubmit={this.onSubmit} className="tab">
           <input
             type="text"
             name="text"

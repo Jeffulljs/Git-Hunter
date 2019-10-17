@@ -3,7 +3,7 @@ import UserItem from './UserItem';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
 
-const Users = ({ users, loading }) => {
+const users = ({ users, loading }) => {
   if (loading) {
     return <Spinner />;
   } else {
@@ -17,7 +17,7 @@ const Users = ({ users, loading }) => {
   }
 };
 
-Users.propTypes = {
+users.propTypes = {
   users: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired
 };
@@ -28,4 +28,4 @@ const userStyle = {
   gridGap: '1rem'
 };
 
-export default Users;
+export default users;
