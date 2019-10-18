@@ -21,10 +21,10 @@ class App extends Component {
   //    this.setState({ users: res.data, loading: false });
   //  }
 
-  // chercher un utilisatuer GitHub
+  // chercher un utilisateur GitHub
   searchUsers = async text => {
     const res = await axios.get(
-      `https://api.github.com/search/users?q=${text}client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+      `https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
     );
 
     this.setState({ users: res.data.items, loading: false });
